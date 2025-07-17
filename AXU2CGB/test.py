@@ -49,22 +49,21 @@ def run_inference():
         input_len = n2cube.dpuGetInputTensorSize(task, INPUT_NODE)
         n2cube.dpuSetInputTensorInHWCFP32(task, INPUT_NODE, input_data, input_len)
 
-        start_time = time.process_time()
+        # Run task and get hardware DPU execution time
         n2cube.dpuRunTask(task)
-        end_time = time.process_time()
-        fpga_inference_time_ms = (end_time - start_time) * 1000
+        fpga_inference_time_us = n2cube.dpuGetTaskProfile(task)
+        fpga_inference_time_ms = fpga_inference_time_us / 1000.0
 
         output_size = n2cube.dpuGetOutputTensorSize(task, OUTPUT_NODE)
         output_data = n2cube.dpuGetOutputTensorInHWCFP32(task, OUTPUT_NODE, output_size)
 
-        # Apply softmax to convert logits to probabilities
+        # Apply softmax
         probabilities = softmax(output_data)
-
         prediction = int(np.argmax(probabilities))
         confidence = float(np.max(probabilities))
 
         print(f"Image: {os.path.basename(img_path)} ? Predicted: {prediction} (Confidence: {confidence:.2f})")
-        print(f"FPGA Inference Time: {fpga_inference_time_ms:.2f} ms")
+        print(f"DPU Inference Time: {fpga_inference_time_ms:.2f} ms")
 
         img_vis = cv2.imread(img_path)
         if img_vis is not None:
