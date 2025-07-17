@@ -1,0 +1,9 @@
+#####################################
+EVALUATE QUANTIZED GRAPH
+#####################################
+ Top 1 accuracy with validation set: 0.9784
+ Top 5 accuracy with validation set: 0.9997
+FINISHED!
+#####################################
+EVALUATE QUANTIZED GRAPH COMPLETED
+#####################################

@@ -1,0 +1,18 @@
+Directory /workspace/MNIST_Vitis_AI/MNIST_DNNDK_lab/calib_dir created
+FINISHED GENERATING CALIBRATION IMAGES
+#####################################
+QUANTIZE
+#####################################
+INFO: Checking Float Graph...
+INFO: Float Graph Check Done.
+INFO: Calibrating for 200 iterations...
+INFO: Calibration Done.
+INFO: Generating Deploy Model...
+INFO: Deploy Model Generated.
+********************* Quantization Summary *********************      
+INFO: Output:       
+  quantize_eval_model: ./quantize_results/quantize_eval_model.pb       
+  deploy_model: ./quantize_results/deploy_model.pb
+#####################################
+QUANTIZATION COMPLETED
+#####################################

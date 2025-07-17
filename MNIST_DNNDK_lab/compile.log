@@ -1,0 +1,40 @@
+#####################################
+COMPILE WITH VAI_C_TENSORFLOW
+#####################################
+
+Kernel topology "deploy_kernel_graph.jpg" for network "deploy"
+kernel list info for network "deploy"
+                               Kernel ID : Name
+                                       0 : deploy
+
+                             Kernel Name : deploy
+--------------------------------------------------------------------------------
+                             Kernel Type : DPUKernel
+                               Code Size : 7.49KB
+                              Param Size : 0.95MB
+                           Workload MACs : 3.30MOPS
+                         IO Memory Space : 7.31KB
+                              Mean Value : 0, 0, 0, 
+                      Total Tensor Count : 5
+                Boundary Input Tensor(s)   (H*W*C)
+                          images_in:0(0) : 28*28*1
+
+               Boundary Output Tensor(s)   (H*W*C)
+                     dense_1_MatMul:0(0) : 1*1*10
+
+                        Total Node Count : 4
+                           Input Node(s)   (H*W*C)
+                        conv2d_Conv2D(0) : 28*28*1
+
+                          Output Node(s)   (H*W*C)
+                       dense_1_MatMul(0) : 1*1*10
+
+
+
+
+**************************************************
+* VITIS_AI Compilation - Xilinx Inc.
+**************************************************
+#####################################
+COMPILATION COMPLETED
+#####################################

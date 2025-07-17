@@ -1,0 +1,2 @@
+model_checkpoint_path: "/workspace/MNIST_Vitis_AI/MNIST_DNNDK_lab/chkpts/float_model.ckpt"
+all_model_checkpoint_paths: "/workspace/MNIST_Vitis_AI/MNIST_DNNDK_lab/chkpts/float_model.ckpt"
